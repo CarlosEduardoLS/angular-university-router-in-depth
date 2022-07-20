@@ -8,9 +8,9 @@ import { LessonSummary } from "../model/lesson-summary";
   styleUrls: ["./lessons-list.component.css"],
 })
 export class LessonsListComponent implements OnInit {
-  lessons: LessonSummary[];
+  constructor(private readonly route: ActivatedRoute) {}
 
-  constructor(private route: ActivatedRoute) {}
+  lessons: LessonSummary[];
 
   ngOnInit() {
     this.lessons = this.route.snapshot.data["lessons"];
